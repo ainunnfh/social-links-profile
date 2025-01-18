@@ -1,11 +1,12 @@
 import React from "react";
+import SocmedAccounts from "./SocmedAccounts.tsx";
 
 interface IProfileCardPropd {
-  children?: React.ReactNode;
+  accounts: { platform: string; url: string }[];
 }
 const ProfileCard = (props: IProfileCardPropd) => {
   return (
-    <div className="flex justify-center h-screen items-center ">
+    <div className="flex justify-center h-screen items-center">
       <div className="flex flex-col items-center justify-center p-10 bg-gray-800 rounded-md">
         <img
           src="https://randomuser.me/api/portraits/women/24.jpg"
@@ -17,7 +18,10 @@ const ProfileCard = (props: IProfileCardPropd) => {
         <div className="text-white mt-4">
           "Front-end developer and avid reader"
         </div>
-        <div className="mt-4">{props.children}</div>
+
+        <div className="mt-4">
+          <SocmedAccounts accounts={props.accounts} />
+        </div>
       </div>
     </div>
   );
