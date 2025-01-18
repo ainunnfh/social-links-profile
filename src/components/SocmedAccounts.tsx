@@ -10,7 +10,7 @@ const SocmedAccounts = (props: ISocmedAcc) => {
         {props.accounts.map((account, index) => (
           <li key={index} className="my-2">
             <a
-              className="text-white font-semibold flex justify-around bg-gray-700 w-64 p-2 rounded-md"
+              className="text-white font-semibold flex justify-around bg-[#333333] w-64 p-2 rounded-md"
               href={account.url}
               target="_blank"
               rel="noopener noreferrer"
