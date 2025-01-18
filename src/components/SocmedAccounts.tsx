@@ -1,17 +1,25 @@
 import React from "react";
 
 interface ISocmedAcc {
-  name: string;
-  url?: string;
+  accounts: { platform: string; url: string }[];
 }
 const SocmedAccounts = (props: ISocmedAcc) => {
   return (
-    <div className="text-white text-center font-semibold flex bg-gray-700 w-64 p-2 rounded-md">
-      <div className="cursor-pointer">
-        <a href={props.url} target="_blank">
-          {props.name}
-        </a>
-      </div>
+    <div>
+      <ul className="space-y-3">
+        {props.accounts.map((account, index) => (
+          <li key={index} className="my-2">
+            <a
+              className="text-white font-semibold flex justify-around bg-gray-700 w-64 p-2 rounded-md"
+              href={account.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {account.platform}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
